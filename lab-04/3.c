@@ -13,7 +13,7 @@ key is hit. (a simple version of more UNIX utility)
 #define LINES_PER_PAGE 20
 int main(int argc, char *argv[]) {
     if (argc < 2) {
-        write(STDERR_FILENO, "Usage: ./3.out file1 file2 ...\n", 31);
+        write(2, "Usage: ./3.out file1 file2 ...\n", 31);
         return 1;
     }
     char buffer[1024];
@@ -33,12 +33,12 @@ int main(int argc, char *argv[]) {
                     line_count++;
                     if (line_count >= LINES_PER_PAGE) {
                         char c;
-                        read(STDIN_FILENO, &c, 1);
+                        read(0, &c, 1);
                         line_count = 0;
                         ptr++;
                     }
                 }
-                write(STDOUT_FILENO, ptr, 1);
+                write(1, ptr, 1);
                 ptr++;
             }
         }
@@ -52,6 +52,8 @@ int main(int argc, char *argv[]) {
 
 /*
 output:
+
+$ 3.out sample_text.txt
 one
 two
 three
