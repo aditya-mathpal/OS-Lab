@@ -28,10 +28,21 @@ int main() {
 
 /*
 output:
+(first shell):
+$ ./4.out &
 I'm the child!
 Now I'm a zombie
 Run ps -ef | grep 4.out to find me
 
+(second shell):
+$ ps -ef | grep 4.out
+... ./4.out
+... [4.out] <defunct>
+
+(first shell):
 Parent dying, init will clean up zombie
 Run ps -ef | grep 4.out to check
+
+(second shell):
+<empty>
 */
