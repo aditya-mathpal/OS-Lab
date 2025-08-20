@@ -44,5 +44,6 @@ Parent dying, init will clean up zombie
 Run ps -ef | grep 4.out to check
 
 (second shell):
+$ ps -ef | grep 4.out
 <empty>
 */
