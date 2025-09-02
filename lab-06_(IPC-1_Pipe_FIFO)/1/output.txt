@@ -1,0 +1,26 @@
+Script started on 2025-09-03 01:23:25+14:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="39" LINES="10"]
+[?2004h1$ ./producer.out 
+[?2004lOpening FIFO for writing...
+Writing 4 integers to FIFO
+Wrote 10
+Wrote 20
+Wrote 30
+Wrote 40
+Finished
+[?2004h1$ [?2004l
+exit
+
+Script done on 2025-09-03 01:23:36+14:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2025-09-03 01:23:28+14:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="39" LINES="10"]
+[?2004h1$ ./consumer.out 
+[?2004lOpening FIFO for reading...
+Reading integers from FIFO:
+Read 10
+Read 20
+Read 30
+Read 40
+Finished
+[?2004h1$ [?2004l
+exit
+
+Script done on 2025-09-03 01:23:37+14:00 [COMMAND_EXIT_CODE="0"]
