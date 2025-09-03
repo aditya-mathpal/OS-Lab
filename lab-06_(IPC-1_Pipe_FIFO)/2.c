@@ -1,3 +1,7 @@
+/*
+Demonstrate creation, writing to, and reading from a pipe.
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
