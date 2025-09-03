@@ -21,32 +21,34 @@ there are no items.
 #include <sys/types.h>
 #include <sys/stat.h>
 
-int main() {
-    int fd;
-    char buf[16];
-    int count;
-    const char *file = "shelf.txt";
+#define FIFO_NAME "/tmp/shelf_counter"
 
+int main() {
+    int fifo_fd;
+    int current_count;
+    
+    printf("Consumer starting...\n");
+    
     while (1) {
-        sleep(1);
-        fd = open(file, O_RDWR);
-        if (fd == -1) {
-            perror("open");
-            exit(1);
-        }
-        int n = read(fd, buf, sizeof(buf) - 1);
-        buf[n] = '\0';
-        count = atoi(buf);
-        if (count > 0) {
-            count--;
-            sprintf(buf, "%d\n", count);
-            lseek(fd, 0, SEEK_SET);
-            write(fd, buf, strlen(buf));
-            printf("Removed one item, new shelf count %d\n", count);
+        fifo_fd = open(FIFO_NAME, O_RDONLY);
+        if (read(fifo_fd, &current_count, sizeof(int)) > 0) {
+            close(fifo_fd);
+            
+            if (current_count > 0) {
+                current_count--;
+                printf("Removed 1 item. New shelf count: %d\n", current_count);
+            } else printf("No items available\n");
+            
+            fifo_fd = open(FIFO_NAME, O_WRONLY);
+            write(fifo_fd, &current_count, sizeof(int));
+            close(fifo_fd);
         } else {
-            printf("No items on the shelf\n");
+            close(fifo_fd);
         }
-        close(fd);
+        
+        sleep(3);
     }
+    
     return 0;
 }
+

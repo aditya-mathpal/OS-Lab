@@ -1,26 +1,20 @@
-Script started on 2025-09-03 02:42:50+14:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="53" LINES="10"]
-[?2004h4$ ./consumer.out [C[C[C[C[Cproduc[C[C[C[C[C[C[C
-[?2004lSet shelf count to 5
-Added one item, current shelf count 5
-Added one item, current shelf count 4
-Added one item, current shelf count 3
-Added one item, current shelf count 2
+Script started on 2025-09-03 15:37:34+05:30 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="87" LINES="15"]
+[?2004h]0;CSE_5C2@debianpc-02: ~/230905232/OS-Lab/lab-06_(IPC-1_Pipe_FIFO)/4[01;32mCSE_5C2@debianpc-02[00m:[01;34m~/230905232/OS-Lab/lab-06_(IPC-1_Pipe_FIFO)/4[00m$ ./producer.out 
+[?2004lInitialized shelf with 5 items
+Added 1 item. Shelf count: 5
+Added 1 item. Shelf count: 5
 ^C
-[?2004h4$ [?2004l
+[?2004h]0;CSE_5C2@debianpc-02: ~/230905232/OS-Lab/lab-06_(IPC-1_Pipe_FIFO)/4[01;32mCSE_5C2@debianpc-02[00m:[01;34m~/230905232/OS-Lab/lab-06_(IPC-1_Pipe_FIFO)/4[00m$ [?2004l
 exit
 
-Script done on 2025-09-03 02:43:09+14:00 [COMMAND_EXIT_CODE="130"]
-Script started on 2025-09-03 02:42:55+14:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="53" LINES="10"]
-[?2004h4$ ./consumer.out [C[C[C[C[Cproduc[C[C[C[C[C[C[C[C[C[C[C[Cconsum[C[C[C[C[C[C[C
-[?2004lRemoved one item, new shelf count 4
-Removed one item, new shelf count 4
-Removed one item, new shelf count 3
-Removed one item, new shelf count 3
-Removed one item, new shelf count 2
-Removed one item, new shelf count 2
-Removed one item, new shelf count 1
+Script done on 2025-09-03 15:38:03+05:30 [COMMAND_EXIT_CODE="130"]
+Script started on 2025-09-03 15:37:40+05:30 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="87" LINES="15"]
+[?2004h]0;CSE_5C2@debianpc-02: ~/230905232/OS-Lab/lab-06_(IPC-1_Pipe_FIFO)/4[01;32mCSE_5C2@debianpc-02[00m:[01;34m~/230905232/OS-Lab/lab-06_(IPC-1_Pipe_FIFO)/4[00m$ ./consumer.out 
+[?2004lConsumer starting...
+Removed 1 item. New shelf count: 4
+Removed 1 item. New shelf count: 4
 ^C
-[?2004h4$ [?2004l
+[?2004h]0;CSE_5C2@debianpc-02: ~/230905232/OS-Lab/lab-06_(IPC-1_Pipe_FIFO)/4[01;32mCSE_5C2@debianpc-02[00m:[01;34m~/230905232/OS-Lab/lab-06_(IPC-1_Pipe_FIFO)/4[00m$ [?2004l
 exit
 
-Script done on 2025-09-03 02:43:10+14:00 [COMMAND_EXIT_CODE="130"]
+Script done on 2025-09-03 15:38:04+05:30 [COMMAND_EXIT_CODE="130"]

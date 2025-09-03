@@ -25,14 +25,11 @@ int main() {
     }
     
     printf("Reading integers from FIFO:\n");
-    for (int i = 0; i < 4; i++) {
-        if (read(fd, &number, sizeof(int)) > 0) {
-            printf("Read %d\n", number);
-        }
-    }
+    for (int i = 0; i < 4; i++)
+        if (read(fd, &number, sizeof(int)) > 0) printf("Read %d\n", number);
     
     close(fd);
-    unlink(FIFO_NAME); // Remove FIFO
+    unlink(FIFO_NAME);
     printf("Finished\n");
     return 0;
 }

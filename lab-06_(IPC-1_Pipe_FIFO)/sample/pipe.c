@@ -17,8 +17,3 @@ int main(int argc, char **argv) {
     else perror("read");
     exit(0);
 }
-
-/*
-output:
-read 28 bytes from the pipe:"hello... this is sample data"
-*/
