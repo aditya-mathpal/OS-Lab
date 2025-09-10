@@ -1,0 +1,25 @@
+Script started on 2025-09-10 16:15:23+05:30 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="74" LINES="8"]
+[?2004h]0;CSE_5C2@debianpc-02: ~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/3[01;32mCSE_5C2@debianpc-02[00m:[01;34m~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_M
+emory/3[00m$ ./i.out 
+[?2004lInterface program started. Type 'exit' to quit.
+Enter your message: this is a test
+Message sent
+Enter your message: exit
+Exiting...
+[?2004h]0;CSE_5C2@debianpc-02: ~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/3[01;32mCSE_5C2@debianpc-02[00m:[01;34m~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_M
+emory/3[00m$ [?2004l
+exit
+
+Script done on 2025-09-10 16:15:47+05:30 [COMMAND_EXIT_CODE="0"]
+Script started on 2025-09-10 16:15:26+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="74" LINES="8"]
+[?2004h]0;CSE_5C2@debianpc-02: ~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/3[01;32mCSE_5C2@debianpc-02[00m:[01;34m~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_M
+emory/3[00m$ ./d.out 
+[?2004lWaiting...
+Received message: this is a test
+Received message: exit
+Terminated.
+[?2004h]0;CSE_5C2@debianpc-02: ~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/3[01;32mCSE_5C2@debianpc-02[00m:[01;34m~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_M
+emory/3[00m$ [?2004l
+exit
+
+Script done on 2025-09-10 16:15:48+05:30 [COMMAND_EXIT_CODE="0"]

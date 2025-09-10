@@ -1,0 +1,31 @@
+Script started on 2025-09-10 15:37:09+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="74" LINES="7"]
+[?2004h]0;CSE_5C2@debianpc-02: ~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/1[01;32mCSE_5C2@debianpc-02[00m:[01;34m~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_M
+emory/1[00m$ code .d 230905232/OS-Lab/emory/1[00m$ code .[K[K./a.out
+[?2004lMessage queue created...
+Enter a number (0 to exit): 525
+Sent 525 to B
+Enter a number (0 to exit): 255
+Sent 255 to B
+Enter a number (0 to exit): 0
+Sent 0 to B
+[?2004h]0;CSE_5C2@debianpc-02: ~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/1[01;32mCSE_5C2@debianpc-02[00m:[01;34m~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_M
+emory/1[00m$ [?2004l
+exit
+
+Script done on 2025-09-10 15:37:37+05:30 [COMMAND_EXIT_CODE="0"]
+Script started on 2025-09-10 15:37:13+05:30 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="74" LINES="7"]
+[?2004h]0;CSE_5C2@debianpc-02: ~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/1[01;32mCSE_5C2@debianpc-02[00m:[01;34m~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_M
+emory/1[00m$ ./b.out
+[?2004lWaiting...
+Received 525
+palindrome
+Received 255
+not palindrome
+Received 0
+Received exit signal
+Exiting...
+[?2004h]0;CSE_5C2@debianpc-02: ~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/1[01;32mCSE_5C2@debianpc-02[00m:[01;34m~/230905232/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_M
+emory/1[00m$ [?2004l
+exit
+
+Script done on 2025-09-10 15:37:38+05:30 [COMMAND_EXIT_CODE="0"]
