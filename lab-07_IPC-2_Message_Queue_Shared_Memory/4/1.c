@@ -1,3 +1,7 @@
+/*
+Write a two-player 3x3 tic-tac-toe console game using shared memory.
+*/
+
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
