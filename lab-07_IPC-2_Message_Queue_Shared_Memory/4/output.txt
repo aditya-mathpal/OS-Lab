@@ -1,0 +1,118 @@
+Script started on 2025-09-24 10:30:03+05:30 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="47" LINES="8"]
+[1m[7m%[27m[1m[0m                                               ]2;aditya-mathpal@ThinkPad-E14-Gen-5:~/github/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/4]1;..ared_Memory/4]7;file://ThinkPad-E14-Gen-5/home/aditya-mathpal/github/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/4\[0m[27m[24m[J[01;32m➜  [36m4[00m [K[?1h=[?2004h[0m[27m[24m[J[01;32m➜  [36m4[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K../1.out[?1l>[?2004l
+]2;./1.out]1;./1.outPlayer 1 (X): Game initialized. Waiting for Player 2...
+Player 1: Waiting for Player 2 to join...
+Player 1: Waiting for Player 2 to join...
+Player 1: Waiting for Player 2 to join...
+Player 1: Waiting for Player 2 to join...
+Player 1 (X): Game started!
+
+   0   1   2
+0    |   |  
+  ---|---|---
+1    |   |  
+  ---|---|---
+2    |   |  
+
+Player 1 (X): Your turn. Enter row and column (0-2): 0 0
+
+   0   1   2
+0  X |   |  
+  ---|---|---
+1    |   |  
+  ---|---|---
+2    |   |  
+
+Player 1: Waiting for Player 2's move...
+
+   0   1   2
+0  X |   |  
+  ---|---|---
+1  O |   |  
+  ---|---|---
+2    |   |  
+
+Player 1 (X): Your turn. Enter row and column (0-2): 0 1
+
+   0   1   2
+0  X | X |  
+  ---|---|---
+1  O |   |  
+  ---|---|---
+2    |   |  
+
+Player 1: Waiting for Player 2's move...
+
+   0   1   2
+0  X | X |  
+  ---|---|---
+1  O |   |  
+  ---|---|---
+2  O |   |  
+
+Player 1 (X): Your turn. Enter row and column (0-2): 0 2
+
+   0   1   2
+0  X | X | X
+  ---|---|---
+1  O |   |  
+  ---|---|---
+2  O |   |  
+
+Player 1 (X): You won!
+Game ended
+[1m[7m%[27m[1m[0m                                               ]2;aditya-mathpal@ThinkPad-E14-Gen-5:~/github/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/4]1;..ared_Memory/4]7;file://ThinkPad-E14-Gen-5/home/aditya-mathpal/github/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/4\[0m[27m[24m[J[01;32m➜  [36m4[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hd [?2004l
+
+Script done on 2025-09-24 10:30:38+05:30 [COMMAND_EXIT_CODE="0"]
+Script started on 2025-09-24 10:30:06+05:30 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="47" LINES="8"]
+[1m[7m%[27m[1m[0m                                               ]2;aditya-mathpal@ThinkPad-E14-Gen-5:~/github/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/4]1;..ared_Memory/4]7;file://ThinkPad-E14-Gen-5/home/aditya-mathpal/github/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/4\[0m[27m[24m[J[01;32m➜  [36m4[00m [K[?1h=[?2004h[0m[27m[24m[J[01;32m➜  [36m4[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K2 ../2.out[?1l>[?2004l
+]2;./2.out]1;./2.outPlayer 2 (O): Joined the game!
+
+   0   1   2
+0    |   |  
+  ---|---|---
+1    |   |  
+  ---|---|---
+2    |   |  
+
+
+   0   1   2
+0  X |   |  
+  ---|---|---
+1    |   |  
+  ---|---|---
+2    |   |  
+
+Player 2 (O): Your turn. Enter row and column (0-2): 1 0
+
+   0   1   2
+0  X |   |  
+  ---|---|---
+1  O |   |  
+  ---|---|---
+2    |   |  
+
+Player 2: Waiting for Player 1's move...
+
+   0   1   2
+0  X | X |  
+  ---|---|---
+1  O |   |  
+  ---|---|---
+2    |   |  
+
+Player 2 (O): Your turn. Enter row and column (0-2): 2 0
+
+   0   1   2
+0  X | X |  
+  ---|---|---
+1  O |   |  
+  ---|---|---
+2  O |   |  
+
+Player 2: Waiting for Player 1's move...
+Player 2 (O): Player 1 won!
+Game ended
+[1m[7m%[27m[1m[0m                                               ]2;aditya-mathpal@ThinkPad-E14-Gen-5:~/github/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/4]1;..ared_Memory/4]7;file://ThinkPad-E14-Gen-5/home/aditya-mathpal/github/OS-Lab/lab-07_IPC-2_Message_Queue_Shared_Memory/4\[0m[27m[24m[J[01;32m➜  [36m4[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[?2004l
+
+Script done on 2025-09-24 10:30:38+05:30 [COMMAND_EXIT_CODE="0"]
