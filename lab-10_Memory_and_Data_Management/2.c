@@ -7,14 +7,7 @@ queues  with  each  of  them  working  with  different  scheduling  policies
 #include <stdlib.h>
 
 typedef struct Process {
-    int pid;
-    int arrivalTime;
-    int burstTime;
-    int remainingTime;
-    int queueLevel;
-    int completionTime;
-    int turnaroundTime;
-    int waitingTime;
+    int pid, aT, bT, rT, qL, cT, taT, wT;
     struct Process *next;
 } Process;
 
@@ -60,7 +53,7 @@ Process* findSJF(Queue *q) {
     Process *current = q->front;
     
     while (current != NULL) {
-        if (current->remainingTime < shortest->remainingTime) {
+        if (current->rT < shortest->rT) {
             shortest = current;
         }
         current = current->next;
@@ -96,7 +89,7 @@ void mlfqScheduler(Process *processes[], int n) {
     printf("Queue 3: SJF (Non-preemptive)\n\n");
     
     for (int i = 0; i < n; i++) {
-        if (processes[i]->arrivalTime == 0) {
+        if (processes[i]->aT == 0) {
             enqueue(q1, processes[i]);
             idx++;
         }
@@ -107,7 +100,7 @@ void mlfqScheduler(Process *processes[], int n) {
     printf("----------------------------------------------------------------\n");
     
     while (completed < n) {
-        while (idx < n && processes[idx]->arrivalTime <= currentTime) {
+        while (idx < n && processes[idx]->aT <= currentTime) {
             enqueue(q1, processes[idx]);
             printf("%-8d %-10s %-8s %-30s\n", 
                    currentTime, "", "", "P" + processes[idx]->pid);
@@ -116,54 +109,54 @@ void mlfqScheduler(Process *processes[], int n) {
         
         if (!isEmpty(q1)) {
             Process *p = dequeue(q1);
-            int timeSlice = (p->remainingTime < 4) ? p->remainingTime : 4;
+            int timeSlice = (p->rT < 4) ? p->rT : 4;
             
             printf("%-8d P%-9d Q1       Executing\n", 
                    currentTime, p->pid);
             
             currentTime += timeSlice;
-            p->remainingTime -= timeSlice;
+            p->rT -= timeSlice;
             
-            while (idx < n && processes[idx]->arrivalTime <= currentTime) {
+            while (idx < n && processes[idx]->aT <= currentTime) {
                 enqueue(q1, processes[idx]);
                 idx++;
             }
             
-            if (p->remainingTime == 0) {
-                p->completionTime = currentTime;
-                p->turnaroundTime = p->completionTime - p->arrivalTime;
-                p->waitingTime = p->turnaroundTime - p->burstTime;
+            if (p->rT == 0) {
+                p->cT = currentTime;
+                p->taT = p->cT - p->aT;
+                p->wT = p->taT - p->bT;
                 completed++;
                 printf("%-8d P%-9d Q1       Completed\n", currentTime, p->pid);
             } else {
-                p->queueLevel = 2;
+                p->qL = 2;
                 enqueue(q2, p);
                 printf("%-8d P%-9d Q1→Q2    Demoted\n", currentTime, p->pid);
             }
         }
         else if (!isEmpty(q2)) {
             Process *p = dequeue(q2);
-            int timeSlice = (p->remainingTime < 8) ? p->remainingTime : 8;
+            int timeSlice = (p->rT < 8) ? p->rT : 8;
             
             printf("%-8d P%-9d Q2       Executing\n", 
                    currentTime, p->pid);
             
             currentTime += timeSlice;
-            p->remainingTime -= timeSlice;
+            p->rT -= timeSlice;
             
-            while (idx < n && processes[idx]->arrivalTime <= currentTime) {
+            while (idx < n && processes[idx]->aT <= currentTime) {
                 enqueue(q1, processes[idx]);
                 idx++;
             }
             
-            if (p->remainingTime == 0) {
-                p->completionTime = currentTime;
-                p->turnaroundTime = p->completionTime - p->arrivalTime;
-                p->waitingTime = p->turnaroundTime - p->burstTime;
+            if (p->rT == 0) {
+                p->cT = currentTime;
+                p->taT = p->cT - p->aT;
+                p->wT = p->taT - p->bT;
                 completed++;
                 printf("%-8d P%-9d Q2       Completed\n", currentTime, p->pid);
             } else {
-                p->queueLevel = 3;
+                p->qL = 3;
                 enqueue(q3, p);
                 printf("%-8d P%-9d Q2→Q3    Demoted\n", currentTime, p->pid);
             }
@@ -174,14 +167,14 @@ void mlfqScheduler(Process *processes[], int n) {
             printf("%-8d P%-9d Q3       Executing\n", 
                    currentTime, p->pid);
             
-            currentTime += p->remainingTime;
-            p->remainingTime = 0;
-            p->completionTime = currentTime;
-            p->turnaroundTime = p->completionTime - p->arrivalTime;
-            p->waitingTime = p->turnaroundTime - p->burstTime;
+            currentTime += p->rT;
+            p->rT = 0;
+            p->cT = currentTime;
+            p->taT = p->cT - p->aT;
+            p->wT = p->taT - p->bT;
             completed++;
             
-            while (idx < n && processes[idx]->arrivalTime <= currentTime) {
+            while (idx < n && processes[idx]->aT <= currentTime) {
                 enqueue(q1, processes[idx]);
                 idx++;
             }
@@ -201,13 +194,13 @@ void mlfqScheduler(Process *processes[], int n) {
     for (int i = 0; i < n; i++) {
         printf("P%-7d %-12d %-12d %-12d %-12d %-12d\n", 
                processes[i]->pid, 
-               processes[i]->arrivalTime,
-               processes[i]->burstTime,
-               processes[i]->completionTime,
-               processes[i]->turnaroundTime,
-               processes[i]->waitingTime);
-        totalTAT += processes[i]->turnaroundTime;
-        totalWT += processes[i]->waitingTime;
+               processes[i]->aT,
+               processes[i]->bT,
+               processes[i]->cT,
+               processes[i]->taT,
+               processes[i]->wT);
+        totalTAT += processes[i]->taT;
+        totalWT += processes[i]->wT;
     }
     
     printf("\nAvg TAT: %.2f\n", totalTAT / n);
@@ -229,18 +222,18 @@ int main() {
         
         printf("%d:\n", i + 1);
         printf("  AT: ");
-        scanf("%d", &processes[i]->arrivalTime);
+        scanf("%d", &processes[i]->aT);
         printf("  BT: ");
-        scanf("%d", &processes[i]->burstTime);
+        scanf("%d", &processes[i]->bT);
         
-        processes[i]->remainingTime = processes[i]->burstTime;
-        processes[i]->queueLevel = 1;
+        processes[i]->rT = processes[i]->bT;
+        processes[i]->qL = 1;
         processes[i]->next = NULL;
     }
     
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
-            if (processes[j]->arrivalTime > processes[j + 1]->arrivalTime) {
+            if (processes[j]->aT > processes[j + 1]->aT) {
                 Process *temp = processes[j];
                 processes[j] = processes[j + 1];
                 processes[j + 1] = temp;
