@@ -26,10 +26,10 @@ void*worker(void*arg){
 
 int main(){
     int n,i,id,bt;
-    printf("Processes:");
+    printf("Processes: ");
     scanf("%d",&n);
     for(i=0;i<3;i++)q[i]=malloc(50*sizeof(Proc));
-    printf("Enter id bt:\n");
+    printf("Enter ID and Burst Time: \n");
     for(i=0;i<n;i++){
         scanf("%d%d",&id,&bt);
         q[0][cnt[0]].id=id;

@@ -4,7 +4,7 @@ typedef struct{
 }Seg;
 
 int main(){
-    Seg tbl[5]={{1400,2400},{6300,6700},{4300,4700},{3200,4300},{4700,5700}};
+    Seg tbl[5]={{1400,1000},{6300,400},{4300,400},{3200,1100},{4700,1000}};
     int seg,off,phy;
     printf("Segment Table:\nSeg\tBase\tLimit\n");
     for(int i=0;i<5;i++)
@@ -22,3 +22,17 @@ int main(){
     }
     return 0;
 }
+
+/*
+output:
+Segment Table:
+Seg     Base    Limit
+0       1400    1000
+1       6300    400
+2       4300    400
+3       3200    1100
+4       4700    1000
+53 byte of seg 2: 4353
+852 byte of seg 3: 4052
+1222 byte of seg 0: Error
+*/
