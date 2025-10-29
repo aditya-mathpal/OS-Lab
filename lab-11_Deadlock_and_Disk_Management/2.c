@@ -6,10 +6,10 @@ important  that  shared  data  be  safe  from  concurrent  access.  To  ensure  
 shared data, you can use mutex locks, which are available in the pthreads libraries.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <pthread.h>
-#include <unistd.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<pthread.h>
+#include<unistd.h>
 
 int n=5, m=3;
 int avail[3] = {3,3,2};

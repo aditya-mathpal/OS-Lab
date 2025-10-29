@@ -12,7 +12,7 @@ int process_id;
 */
 
 #include<stdio.h>
-#include <stdlib.h>
+#include<stdlib.h>
 
 struct DSA {
     int request_id;

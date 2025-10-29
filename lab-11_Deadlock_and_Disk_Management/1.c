@@ -4,7 +4,7 @@ algorithm for deadlock avoidance. The program has to accept all inputs from the 
 Assume the total number of instances of A,B and C are 10,5 and 7 respectively.
 */
 
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
     int n=5, m=3, i, j, k, count=0, alloc[5][3] = {{0,1,0}, {2,0,0}, {3,0,2}, {2,1,1}, {0,0,2}}, max[5][3] = {{7,5,3}, {3,2,2}, {9,0,2}, {2,2,2}, {4,3,3}}, avail[3] = {3,3,2}, need[5][3], finish[5] = {0}, safe[5];
