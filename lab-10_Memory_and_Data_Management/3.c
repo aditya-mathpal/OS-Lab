@@ -1,3 +1,11 @@
+/*
+We have five segments numbered 0 through 4. The segments are stored in physical memory
+as shown in the following Fig 10.3. Write a C program to create segment table. Write methods
+for converting logical address to physical address. Compute the physical address for the
+following.
+(i) 53 byte of segment 2 (ii) 852 byte of segment 3 (iii) 1222 byte of segment 0
+*/
+
 #include<stdio.h>
 typedef struct{
     int base,limit;

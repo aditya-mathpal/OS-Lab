@@ -1,3 +1,8 @@
+/*
+Write a C program to simulate LRU approximation page replacement using second chance
+algorithm. Find the total number of page faults and hit ratio for the algorithm.
+*/
+
 #include<stdio.h>
 
 int main(){
@@ -48,3 +53,19 @@ int main(){
     printf("Hit Ratio: %.2f\n",(float)hits/n);
     return 0;
 }
+
+/*
+output:
+Frames: 4
+Pages: 5
+Enter sequence:
+1 2 3 4 1
+Page 1: 1 -1 -1 -1 
+Page 2: 1 2 -1 -1 
+Page 3: 1 2 3 -1 
+Page 4: 1 2 3 4 
+Page 1: 1 2 3 4 
+Faults: 4
+Hits: 1
+Hit Ratio: 0.20
+*/
