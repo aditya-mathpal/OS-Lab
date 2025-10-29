@@ -11,11 +11,7 @@ shared data, you can use mutex locks, which are available in the pthreads librar
 #include<pthread.h>
 #include<unistd.h>
 
-int n=5, m=3;
-int avail[3] = {3,3,2};
-int max[5][3] = {{7,5,3}, {3,2,2}, {9,0,2}, {2,2,2}, {4,3,3}};
-int alloc[5][3] = {{0,1,0}, {2,0,0}, {3,0,2}, {2,1,1}, {0,0,2}};
-int need[5][3];
+int n=5, m=3, avail[3] = {3,3,2}, max[5][3] = {{7,5,3}, {3,2,2}, {9,0,2}, {2,2,2}, {4,3,3}}, alloc[5][3] = {{0,1,0}, {2,0,0}, {3,0,2}, {2,1,1}, {0,0,2}}, need[5][3];
 pthread_mutex_t lock;
 
 int is_safe() {
