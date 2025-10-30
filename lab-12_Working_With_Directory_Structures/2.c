@@ -42,14 +42,12 @@ void printDir(char *dir,int depth) {
 }
 
 int main() {
-    printf("Directory listing:\n");
     printDir(".",0);
     return 0;
 }
 
 /*
 output:
-Directory listing:
 1.c
 2.c
 2.out
